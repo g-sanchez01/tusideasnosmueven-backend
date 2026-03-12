@@ -11,15 +11,13 @@ dotenv.config() // Esto lee el archivo .env y carga sus variables en process.env
 const app = express() // Crea una instancia de la aplicación Express. Es tu “servidor” principal.
 
 
-app.use(cors({
-    origin: "https://tusideasnosmueven.com"
-})) // Activa CORS, para permitir que tu API reciba peticiones desde otros dominios.
+app.use(cors()) // Activa CORS, para permitir que tu API reciba peticiones desde otros dominios.
 app.use(express.json()) // Permite que Express pueda interpretar peticiones con contenido JSON. Esto es útil cuando envías datos desde un formulario o front-end.
 app.use('/api/ideas', ideasRoute) // Definir ruta
 
 
 // Definir puerto
-const PORT = process.env.PORT || 4000
+const PORT = process.env.PORT || 8080
 
 // Arrancar app
 app.listen(PORT, () => {

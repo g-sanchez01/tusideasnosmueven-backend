@@ -8,8 +8,11 @@ export const validateIdea = (data) => {
         throw new Error('Todos los campos son obligatorios')
     }
 
-    // Si no es numérico, lanza un error indicando que debe ser un número.
-    if (isNaN(numeroEmpleado, phoneNumber)) {
+    if (isNaN(numeroEmpleado)) {
         throw new Error('El número de empleado debe ser numérico')
+    }
+
+    if (isNaN(phoneNumber)) {
+        throw new Error('El número de teléfono debe ser numérico')
     }
 }
